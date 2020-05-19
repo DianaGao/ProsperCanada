@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 
 
-df = pd.read_excel('/Users/chengshuliu/Documents/Prosper Canada/redcap_data.xlsx')
+df = pd.read_excel('redcap_data.xlsx')
 df_t = df.pivot_table(index=['project_id', 'event_id'], columns='field_name', values='value', aggfunc=np.sum)
 df_t['Year'] = pd.DatetimeIndex(df_t['startdate']).year
 df_t['Federal_Tax_Benefits'] = df_t['fed_taxcbc'] + df_t['fed_taxhstgst']
