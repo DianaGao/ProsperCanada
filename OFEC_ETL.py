@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 
-df = pd.read_excel('/Users/chengshuliu/Documents/Prosper Canada/redcap_data.xlsx')
+df = pd.read_excel('redcap_data.xlsx')
 df_t = df.pivot_table(index=['project_id', 'event_id'], columns='field_name', values='value', aggfunc=np.sum)
 df_t_new = df_t.reset_index()
 df_t_new['UniqueID'] = df_t_new['project_id'].map(str) + '-' + df_t_new['event_id'].map(str)
