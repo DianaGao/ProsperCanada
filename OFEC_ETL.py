@@ -22,7 +22,7 @@ KPI = pd.DataFrame(df_t_new, columns=['UniqueID', 'Year', 'Quarter', 'Data_Sourc
                                        'Provincial_Tax_Benefits', 'Other_Benefits_Secured'])
 
 
-print(KPI.head(10))
+# print(KPI.head(10))
 
-
+KPI.to_excel('KPI.xlsx')
 
